@@ -124,6 +124,11 @@ const bankTwo = [
   useEffect(() => {
     divRef.current.focus();
   }, [])
+
+  if(typeof window === 'undefined') {
+    return null
+  }
+
   return (
     <div className = {styles.app}>
       <div className = {styles.mainBox}>
@@ -155,7 +160,6 @@ const bankTwo = [
      
 
         <div className = {styles.panel}>
-          <button onClick={home}>GO HOME</button>
         <label className={styles.switch}>
           <input type="checkbox" onClick={()=>{
             setPower(!power)
